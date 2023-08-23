@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+100.times do
+  name = Faker::Artist.name
+  colour = Faker::Color.color_name
+  hat = ['Top hat', 'Trilby', 'Fedora', 'Bonnet', 'Baseball cap', 'Flat cap', 'Beanie', 'Bucket hat', 'Cowboy'].sample
+  location = Faker::Address.city
+  price_per_night = (20..120).to_a.sample
+  Alpaca.create!({ name: name, colour: colour, hat: hat, location: location, price_per_night: price_per_night, user_id: 1 })
+end

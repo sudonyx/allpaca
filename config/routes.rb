@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: 'pages#home'
+
+  resources :alpacas, only: %i[index show new create destroy]
 end
