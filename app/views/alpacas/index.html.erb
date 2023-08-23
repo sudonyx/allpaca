@@ -1,13 +1,20 @@
 <div class="container">
-  <h1>See all our Alpacas</h1>
+  <h1 class="mb-5">See all our Alpacas</h1>
 
-  <% @alpacas.each do |alpaca| %>
-    <div class="card">
-      <%= alpaca.name %>
-      <%= alpaca.colour %>
-      <%= alpaca.hat %>
-      <%= alpaca.location %>
-      <%= alpaca.price_per_night %>
-    </div>
-  <% end %>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @alpacas.each do |alpaca| %>
+      <div class="col">
+        <div class="card alpaca-card">
+          <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3c81bf4c-53df-47dd-bd2d-0015c90567ba/dftbgle-f760b627-7873-4df7-8b56-e14286b7bb0c.jpg/v1/fill/w_894,h_894,q_70,strp/alpaca_wearing_a_hat_and_a_scarf_by_xrebelyellx_dftbgle-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTIwMCIsInBhdGgiOiJcL2ZcLzNjODFiZjRjLTUzZGYtNDdkZC1iZDJkLTAwMTVjOTA1NjdiYVwvZGZ0YmdsZS1mNzYwYjYyNy03ODczLTRkZjctOGI1Ni1lMTQyODZiN2JiMGMuanBnIiwid2lkdGgiOiI8PTEyMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2lWhNLji7ITfCJsoVVom9SRkL7hwvfRTAqHChjjIP7Q" class="card-img-top" alt="...">
+          <div class="card-body">
+            <div class="d-flex align-items-end justify-content-between ">
+              <h2 class="card-title m-0"><%= alpaca.name %></h2>
+              <p class="card-text">$ <%= alpaca.price_per_night %></p>
+            </div>
+            <p class="card-location"><%= alpaca.location %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
