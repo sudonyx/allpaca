@@ -1,0 +1,2 @@
+class AlpacasController < ApplicationController
+end
