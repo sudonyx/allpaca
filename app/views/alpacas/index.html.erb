@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>See all our Alpacas</h1>
+
+  <% @alpacas.each do |alpaca| %>
+    <div class="card">
+      <%= alpaca.name %>
+      <%= alpaca.colour %>
+      <%= alpaca.hat %>
+      <%= alpaca.location %>
+      <%= alpaca.price_per_night %>
+    </div>
+  <% end %>
+</div>
