@@ -12,5 +12,13 @@
   hat = ['Top hat', 'Trilby', 'Fedora', 'Bonnet', 'Baseball cap', 'Flat cap', 'Beanie', 'Bucket hat', 'Cowboy'].sample
   location = Faker::Address.city
   price_per_night = (20..120).to_a.sample
-  Alpaca.create!({ name: name, colour: colour, hat: hat, location: location, price_per_night: price_per_night, user_id: 1 })
+  user = User.all.sample
+  Alpaca.create!(
+    name: name,
+    colour: colour,
+    hat: hat,
+    location: location,
+    price_per_night: price_per_night,
+    user: user
+  )
 end
