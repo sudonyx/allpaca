@@ -5,6 +5,10 @@ class AlpacasController < ApplicationController
     @alpacas = Alpaca.all
   end
 
+  def show
+    @alpaca = Alpaca.find(params[:id])
+  end
+
   private
 
   def alpaca_params

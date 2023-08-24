@@ -79,3 +79,5 @@ end
 gem 'devise'
 gem 'faker'
 gem 'cloudinary'
+gem 'bootstrap', '4.5.2'
+gem 'font-awesome-rails'

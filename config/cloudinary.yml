@@ -1,0 +1,11 @@
+development:
+  cloud_name: 'dvnbbttuk'
+  api_key: your_api_ke'213217487893424'
+  api_secret: 'AumWjoLH4SsXq2pvUZhC6iP7zro'
+  secure: true
+
+production:
+  cloud_name: 'dvnbbttuk'
+  api_key: your_api_ke'213217487893424'
+  api_secret: 'AumWjoLH4SsXq2pvUZhC6iP7zro'
+  secure: true

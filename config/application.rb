@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Allpaca
   class Application < Rails::Application
     config.generators do |generate|
-      generate.assets false
+      generate.assets true
       generate.helper false
       generate.test_framework :test_unit, fixture: false
     end
@@ -23,5 +23,6 @@ module Allpaca
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.assets.paths << Rails.root.join('app', 'assets')
   end
 end
