@@ -1,12 +1,12 @@
-.main-logo {
+.navbar-custom {
   justify-content: space-between;
-  background: white;
+  background: rgb(142, 182, 170);
 }
 
-.main-logo .navbar-collapse {
+.navbar-custom .navbar-collapse {
   flex-grow: 0;
 }
 
-.main-logo .navbar-brand img {
+.navbar-custom .navbar-brand img {
   width: 50px;
 }
