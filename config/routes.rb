@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :alpacas, only: %i[index show new create destroy]
+
 end
