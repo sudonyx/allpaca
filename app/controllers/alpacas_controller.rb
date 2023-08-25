@@ -5,6 +5,12 @@ class AlpacasController < ApplicationController
     @alpacas = Alpaca.all
   end
 
+  def destroy
+    @alpaca = Alpaca.find(params[:id])
+    @alpaca.destroy
+    redirect_to alpacas_path
+  end
+
   private
 
   def alpaca_params
