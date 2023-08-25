@@ -3,7 +3,7 @@
 
   <% @alpacas.each do |alpaca| %>
     <div class="card">
-      <%= alpaca.name %>
+      <%= link_to alpaca.name, alpaca_path(alpaca) %>
       <%= alpaca.colour %>
       <%= alpaca.hat %>
       <%= alpaca.location %>

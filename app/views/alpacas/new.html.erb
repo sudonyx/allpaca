@@ -1,0 +1,20 @@
+<h1>Create a New</h1>
+
+<%= form_with(model: @alpaca, url: alpacas_path, local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :colour %>
+    <%= form.text_field :colour %>
+  </div>
+   <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+  <div>
+    <%= form.submit "Create Alpaca" %>
+  </div>
+<% end %>
+
