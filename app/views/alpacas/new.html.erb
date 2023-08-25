@@ -1,20 +1,21 @@
-<h1>Create a New</h1>
+<div class="container my-4">
+  <h1 class="mb-4">Create a New Alpaca</h1>
 
-<%= form_with(model: @alpaca, url: alpacas_path, local: true do |form| %>
-  <div>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div>
-    <%= form.label :colour %>
-    <%= form.text_field :colour %>
-  </div>
-   <div>
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-  <div>
-    <%= form.submit "Create Alpaca" %>
-  </div>
-<% end %>
-
+  <%= form_with(model: @alpaca, url: alpacas_path, local: true, class: "form") do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :colour, class: "form-label" %>
+      <%= form.text_field :colour, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :location, class: "form-label" %>
+      <%= form.text_field :location, class: "form-control" %>
+    </div>
+    <div class="d-grid">
+      <%= form.submit "Create Alpaca", class: "btn btn-primary btn-lg" %>
+    </div>
+  <% end %>
+</div>
