@@ -1,0 +1,11 @@
+<div class="container">
+
+  <h1>Book this Alpaca!</h1>
+
+  <%= simple_form_for([@alpaca, @booking]) do |form| %>
+    <%= form.input :start_date %>
+    <%= form.input :end_date %>
+    <%= form.submit %>
+  <% end %>
+
+</div>

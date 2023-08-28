@@ -9,6 +9,7 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.new
   end
 
+
   def create
     @alpaca = Alpaca.new(alpaca_params)
 
