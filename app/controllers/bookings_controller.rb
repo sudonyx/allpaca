@@ -17,7 +17,6 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to alpaca_path(@alpaca)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end

@@ -8,6 +8,7 @@ class AlpacasController < ApplicationController
   def new
     @alpaca = Alpaca.new
   end
+
   def destroy
     @alpaca = Alpaca.find(params[:id])
     @alpaca.destroy
