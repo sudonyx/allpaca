@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: 'pages#home'
 
-  resources :alpacas, only: %i[index show new create destroy]
+  resources :alpacas, only: %i[index show new create destroy] do
+    resources :bookings, only: %i[new create]
+  end
 
+  resources :bookings, only: %i[show edit update]
 end
