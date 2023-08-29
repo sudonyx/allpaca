@@ -1,10 +1,79 @@
 
-.reviews-container {
-  display: flex;
-  justify-content: flex-end;
-}
-
 .review-box {
-  margin-left: 20px;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 375px;
+  margin-left: 70%;
 }
 
+.review-box .title {
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.review-box .list-items {
+  margin-top: 15px;
+}
+
+.review-box .review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.review-box .review-item {
+  font-size: 14px;
+  margin-bottom: 7px;
+  text-transform: none;
+}
+
+
+
+#form-hide .review-box{
+  display:none;
+}
+
+#review-btn {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgb(142, 182, 170);
+  transition: background 0.3s ease;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  transition: opacity 0.2 s ease;
+}
+
+#review-btn:hover {
+  background: rgb(142, 182, 170);
+  color: rgb(0, 0, 0);
+  opacity: 0.8;
+}
+
+.review-box .list-items {
+  list-style-type: none;
+  padding: 2px;
+}
+
+#booking-btn{
+  color: black;
+  display: block;
+  text-align: center;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgb(142, 182, 170);
+  transition: background 0.3s ease;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  text-decoration: none;
+  transition: opacity 0.2 s ease;
+}
+.booking-btn:hover{
+  opacity: 0.8;
+  color: black;
+}
