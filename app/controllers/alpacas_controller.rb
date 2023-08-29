@@ -13,10 +13,6 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.new(alpaca_params)
 
     if @alpaca.save
-      if params[:alpaca][:image].present?
-        result = Cloudinary::Uploader.upload(params[:alpaca][:image_url])
-        @alpaca.update(image_url: result['secure_url'])
-      end
       redirect_to @alpaca, notice: 'Alpaca was successfully created!'
     else
       render :new
@@ -36,6 +32,6 @@ class AlpacasController < ApplicationController
   private
 
   def alpaca_params
-    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id)
+    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id, :photo)
   end
 end
