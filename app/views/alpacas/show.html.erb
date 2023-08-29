@@ -49,10 +49,54 @@
             reviewForm.style.display = "none";
           }
         });
-      });
-
-      
+      });      
     </script>
+
+  <div class="container">
+    <div class="show-container">
+      <div class="card" style="width: 18rem;">
+        <%= cl_image_tag("alkwjtmzbthmhqwtjk9g", cloud_name: 'db0is4xjr', class: 'card-img-top', width: 400, height: 300, crop: :fill, alt: 'Alpaca Image') %>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= @alpaca.name %></h5>
+          <p class="card-text">
+            <strong>Color:</strong> <%= @alpaca.colour %><br>
+            <strong>Hat:</strong> <%= @alpaca.hat %><br>
+            <strong>Location:</strong> <%= @alpaca.location %><br>
+            <strong>Price per Night:</strong> $<%= @alpaca.price_per_night %>
+          </p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">This alpaca is extremely cute, you'll love it!</li>
+        </ul>
+
+        <%= link_to "Book Now", new_alpaca_booking_path(@alpaca), class: "btn btn-primary btn-lg" %>
+        <%= link_to "Delete Alpaca", alpaca_path(@alpaca), class: "btn btn-danger btn-lg delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
+    </div>
+
+    <div class="reviews-container">
+      <div class="reviews-display">
+        <p><strong>Reviews</strong></p>
+        <ul>
+        <% if @reviews.any? %>
+          <% @reviews.each do |review| %>
+            <li><%= review.content %></li>
+          <% end %>
+        <% end %>
+        </ul>
+      </div>
+      <% if @alpaca_booking %>
+        <div class="review-box">
+          <h1>New review</h1>
+          <%= simple_form_for [@booking, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :title %>
+            <%= f.submit "Submit review", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+  </div>
+  <%= render 'shared/footer' %>
 </body>
-
-
