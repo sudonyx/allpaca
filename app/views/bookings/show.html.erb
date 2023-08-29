@@ -1,0 +1,7 @@
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @booking.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>

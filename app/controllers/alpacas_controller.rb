@@ -11,8 +11,14 @@ class AlpacasController < ApplicationController
   
   def show
     @alpaca = Alpaca.find(params[:id])
+    @reviews = @alpaca.reviews
+    @review = Review.new
+    @alpaca_booking = @alpaca.bookings.find_by(user: current_user)
+    if @alpaca_booking
+    @booking = Booking.find(@alpaca_booking.id)
+    end
   end
-
+  
   def destroy
     @alpaca = Alpaca.find(params[:id])
     @alpaca.destroy

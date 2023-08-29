@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :alpacas, only: %i[index show new create destroy] do
     resources :bookings, only: %i[new create]
+    resources :reviews, only: :create
   end
 
-  resources :bookings, only: %i[show edit update]
+
+  resources :bookings, only: %i[show edit update] do 
+    resources :reviews, only: [:new, :create]
+end
 end
