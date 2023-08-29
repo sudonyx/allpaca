@@ -1,3 +1,20 @@
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #9eebcf;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #7ac2a7;
+  transform: scale(1.05);
+}
+
 .delete-btn {
     background-color: rgb(214, 3, 3);
     padding: 8px 24px;
