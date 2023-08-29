@@ -22,6 +22,11 @@ class BookingsController < ApplicationController
     end
   end
 
+  def user_bookings
+    @user = current_user
+    @bookings = Booking.where(user: @user)
+  end
+
   private
 
   def booking_params
