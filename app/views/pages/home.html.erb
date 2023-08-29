@@ -1,2 +1,42 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpaperaccess.com/full/1123129.jpg);">
+  <div class="container">
+    <h1>Welcome to Allpaca</h1>
+    <p><span data-controller="typed-js"></span></p>
+    <a class="btn btn-flat" href="<%= apply_path %>">Register Now</a>
+  </div>
+</div>
+
+<div class="card text-center">
+  <div class="card-header">
+    <h2 class="h1">Here's how Allpaca works</h2>
+  </div>
+  <div class="card-body">
+    <h5 class="h3">10 years of happy alpacas, 100k+ happy members</h5>
+    <p class="card-text">Search and rent your favorite alpaca. It's easy as 1, 2, 3.</p>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">1. Find an alpaca</h4>
+      <p class="card-text">Search and find your favorite alpaca nearby.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">2. Book the alpaca </h4>
+      <p class="card-text">Book the alpaca through our safe online system.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">3. Meet the alpaca!</h4>
+      <p class="card-text">We offer special alpaca home delivery, however you're more than welcome to pick up in person.</p>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
