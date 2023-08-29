@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   
-  root 'alpacas#index'
+  root 'pages#home'
 
   resources :alpacas, only: %i[index show new create destroy] do
     resources :bookings, only: %i[new create]
@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   end
   
   resources :bookings, only: %i[show edit update] do
-     resources :reviews, only: [:new, :create]
-       collection do
-         get 'user_bookings'
+    resources :reviews, only: [:new, :create]
+    collection do
+      get 'user_bookings'
     end
   end
 end

@@ -11,11 +11,12 @@ class AlpacasController < ApplicationController
 
   def create
     @alpaca = Alpaca.new(alpaca_params)
-
+    @alpaca.user = current_user
+    
     if @alpaca.save
-      redirect_to @alpaca, notice: 'Alpaca was successfully created!'
+      redirect_to alpacas_path, notice: 'Alpaca was successfully created!'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -38,6 +39,6 @@ class AlpacasController < ApplicationController
   private
 
   def alpaca_params
-    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id, :photo)
+    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :photo)
   end
 end
