@@ -21,10 +21,10 @@ class AlpacasController < ApplicationController
     else
       render :new
     end
+  end
   
   def show
     @alpaca = Alpaca.find(params[:id])
-
   end
 
   def destroy
