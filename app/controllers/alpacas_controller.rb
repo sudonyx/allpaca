@@ -9,7 +9,6 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.new
   end
 
-
   def create
     @alpaca = Alpaca.new(alpaca_params)
 
@@ -24,6 +23,11 @@ class AlpacasController < ApplicationController
     end
   end
 
+  def show
+    @alpaca = Alpaca.find(params[:id])
+  end
+
+
   def destroy
     @alpaca = Alpaca.find(params[:id])
     @alpaca.destroy
@@ -33,6 +37,6 @@ class AlpacasController < ApplicationController
   private
 
   def alpaca_params
-    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id, :image_url)
+    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id)
   end
 end
