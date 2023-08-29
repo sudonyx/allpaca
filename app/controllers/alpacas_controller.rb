@@ -21,6 +21,10 @@ class AlpacasController < ApplicationController
     else
       render :new
     end
+  
+  def show
+    @alpaca = Alpaca.find(params[:id])
+
   end
 
   def destroy
@@ -32,6 +36,6 @@ class AlpacasController < ApplicationController
   private
 
   def alpaca_params
-    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id, :image_url)
+    params.require(:alpaca).permit(:name, :colour, :hat, :location, :price_per_night, :user_id)
   end
 end
