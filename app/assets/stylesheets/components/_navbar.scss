@@ -1,51 +1,48 @@
 .navbar-custom {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
   background: rgb(142, 182, 170);
+  padding: 10px 10px;
 }
 
 .navbar-custom .navbar-collapse {
-  flex-grow: 0;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar-custom .navbar-brand img {
-  width: 50px;
+  max-width: 70px;
+  max-height: fit-content;
+  display: block;
+  margin: 0;
+  padding: 2px 1px;
+  border-radius: 100px;
 }
 
-.btn-create {
-  html, body {
-    background: rgb(20,20,20);
-    text-align: center;
-    height: 100%;
-    overflow: hidden;
-  }
-  .svg-wrapper {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-      margin: 0 auto;
-    width: 320px;
-  }
-  .shape {
-    stroke-dasharray: 140 540;
-    stroke-dashoffset: -474;
-    stroke-width: 8px;
-    fill: transparent;
-    stroke: #19f6e8;
-    border-bottom: 5px solid black;
-    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-  }
-  .text {
-    font-family: 'Roboto Condensed';
-    font-size: 22px;
-    line-height: 32px;
-    letter-spacing: 8px;
-    color: #fff;
-    top: -48px;
-    position: relative;
-  }
-  .svg-wrapper:hover .shape {
-    stroke-width: 2px;
-    stroke-dashoffset: 0;
-    stroke-dasharray: 760;
-  }
+.navbar-custom .navbar-nav .nav-link {
+  font-family: 'Lobster', cursive;
+  color: #cde4e7;
+  font-size: 1.9em;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 5px rgba(142, 182, 170, 0.7);
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 2px solid #f3f3f3;
+  border-radius: 25px;
 }
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  font-size: 2.1em;
+  color: #9eebcf;
+  text-shadow: 0 0 10px rgba(142, 182, 170, 1);
+}
+
+
+
+
+
+
+
