@@ -1,5 +1,5 @@
 <div>
-<%= link_to "Delete Alpaca", alpacas_path, class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this Alpaca?" } %>
+<%= link_to "Delete Alpaca", alpaca_path(@alpaca), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
 </div>
 
 <%= render 'shared/footer' %>

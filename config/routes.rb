@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root to: 'pages#home'
-  get '/apply', to: 'alpacas#new', as: 'apply'
+  
+  root 'alpacas#index'
 
-  resources :alpacas, only: %i[index show new create destroy]
+  resources :alpacas, only: %i[index show new create destroy] do
+    resources :bookings, only: %i[new create]
+  end
+
+  resources :bookings, only: %i[show edit update]
 end
