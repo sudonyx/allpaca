@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1>My Bookings</h1>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @bookings.each do |booking| %>
+      <% alpaca = booking.alpaca %>
+      <div class="col">
+        <div class="card alpaca-card">
+          <%= cl_image_tag("alkwjtmzbthmhqwtjk9g", cloud_name: 'db0is4xjr', class: 'card-img-top', width: 400, height: 300, crop: :fill) %>
+          <div class="card-body">
+            <div class="d-flex align-items-end justify-content-between ">
+              <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
+              <p class="card-text">$ <%= alpaca.price_per_night %></p>
+            </div>
+            <p class="card-location"><%= alpaca.location %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
