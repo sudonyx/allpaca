@@ -11,12 +11,14 @@ User.destroy_all
 
 user = User.create!({ email: 'test@test.com', password: 'password' })
 
-100.times do
+10.times do
   name = Faker::Artist.name
   colour = Faker::Color.color_name
   hat = ['Top hat', 'Trilby', 'Fedora', 'Bonnet', 'Baseball cap', 'Flat cap', 'Beanie', 'Bucket hat', 'Cowboy'].sample
   location = Faker::Address.city
   price_per_night = (20..120).to_a.sample
 
-  Alpaca.create!({ name: name, colour: colour, hat: hat, location: location, price_per_night: price_per_night, user_id: user.id })
+  alpaca = Alpaca.new({ name: name, colour: colour, hat: hat, location: location, price_per_night: price_per_night })
+  alpaca.user = user
+  alpaca.save!
 end
