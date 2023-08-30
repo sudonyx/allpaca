@@ -1,7 +1,36 @@
 <body>
-  <div class="delete-btn-div">
-    <%= link_to "Delete Alpaca", alpaca_path(@alpaca), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
-  </div>  
+
+  <div class="container">
+    <h1 class="m-5 text-center"><%= @alpaca.name %></h1>
+  </div>
+
+  <div class="container d-flex justify-content-between">
+
+    <div class="alpaca-details">
+
+      <% if @alpaca.photo.key.nil? %>
+        <%= image_tag("main-logo.png", class: 'card-img-top') %>
+      <% else %>
+        <%= cl_image_tag(@alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
+      <% end %>
+
+      <p class="alpaca-details-text my-4">
+        <strong>Color:</strong> <%= @alpaca.colour %><br>
+        <strong>Hat:</strong> <%= @alpaca.hat %><br>
+        <strong>Location:</strong> <%= @alpaca.location %><br>
+        <strong>Price per Night:</strong> $<%= @alpaca.price_per_night.to_i %>
+      </p>
+
+      <p>"This alpaca is extremely cute, you'll love it!"</p>
+
+      <div class="delete-btn-div">
+        <%= link_to "Delete Alpaca", alpaca_path(@alpaca), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
+      </div>  
+
+    </div>
+
+    <div>
+
     <div class="review-box">
       <p class="title"><strong>Reviews</strong></p>
       <div class="list-items">
@@ -22,6 +51,7 @@
         <%= link_to "Book Alpaca", new_alpaca_booking_path(@alpaca), id: "booking-btn" %>
       <% end %>
     </div>
+
     <% if @alpaca_booking %>
       <div id="form-hide">
         <div class="review-box" id="review-form">
@@ -34,7 +64,7 @@
         </div>
       </div>
     <% end %>
-   
+    
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
@@ -51,27 +81,10 @@
       });      
     </script>
 
-  <div class="container">
-    <div class="show-container">
-      <div class="card" style="width: 18rem;">
-        <%= cl_image_tag("alkwjtmzbthmhqwtjk9g", cloud_name: 'db0is4xjr', class: 'card-img-top', width: 400, height: 300, crop: :fill, alt: 'Alpaca Image') %>
-
-        <div class="card-body">
-          <h5 class="card-title"><%= @alpaca.name %></h5>
-          <p class="card-text">
-            <strong>Color:</strong> <%= @alpaca.colour %><br>
-            <strong>Hat:</strong> <%= @alpaca.hat %><br>
-            <strong>Location:</strong> <%= @alpaca.location %><br>
-            <strong>Price per Night:</strong> $<%= @alpaca.price_per_night %>
-          </p>
-        </div>
-
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">This alpaca is extremely cute, you'll love it!</li>
-        </ul>
-      </div>
     </div>
-  </div>
 
+  </div>
+  
   <%= render 'shared/footer' %>
+
 </body>
