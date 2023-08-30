@@ -13,10 +13,10 @@ user = User.create!({ email: 'test@test.com', password: 'password' })
 
 10.times do
   name = Faker::Artist.name
-  colour = Faker::Color.color_name
+  colour = Faker::Color.color_name.capitalize
   hat = ['Top hat', 'Trilby', 'Fedora', 'Bonnet', 'Baseball cap', 'Flat cap', 'Beanie', 'Bucket hat', 'Cowboy'].sample
   location = Faker::Address.city
-  price_per_night = (20..120).to_a.sample
+  price_per_night = (20..100).to_a.sample
 
   alpaca = Alpaca.new({ name: name, colour: colour, hat: hat, location: location, price_per_night: price_per_night })
   alpaca.user = user
