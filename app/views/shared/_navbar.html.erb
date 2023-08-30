@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-custom">
   <div class="navbar-brand">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "main-logo.png", alt: "Alpaca Logo" %>
     <% end %>
   </div>
@@ -13,7 +13,7 @@
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", alpacas_path, class: "nav-link" %>
+          <%= link_to "See our Alpacas", alpacas_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Add New Alpaca", new_alpaca_path, class: "nav-link" %>

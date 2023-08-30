@@ -1,8 +1,19 @@
 .alpaca-card {
   height: 450px;
+  background-color: $light-gray;
+
+  a {
+    color: $gray;
+    font-weight: bold;
+
+    &:hover {
+      color: $green;
+    }
+  }
 
   img {
     height: 363px;
+    object-fit: cover;
   }
 
   h2 {
@@ -10,7 +21,13 @@
   }
 
   .card-text {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .price {
     font-size: 20px;
+    font-weight: 600;
   }
 }
 
