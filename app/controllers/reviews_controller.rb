@@ -10,8 +10,9 @@ class ReviewsController < ApplicationController
     def create
      @review = Review.new(review_params)
      @review.booking = @booking
+     @alpaca =@booking.alpaca
       if @review.save
-        redirect_to booking_path(@booking)
+        redirect_to alpaca_path(@alpaca)
       else
         render :new, status: :unprocessable_entity
       end
