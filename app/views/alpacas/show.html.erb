@@ -23,9 +23,11 @@
 
       <p>"This alpaca is extremely cute, you'll love it!"</p>
 
-      <div class="delete-btn-div">
-        <%= link_to "Delete Alpaca", alpaca_path(@alpaca), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
-      </div>  
+      <% if @alpaca.user == current_user %>
+        <div class="delete-btn-div">
+          <%= link_to "Delete Alpaca", alpaca_path(@alpaca), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
+        </div>
+      <% end %>
 
     </div>
 

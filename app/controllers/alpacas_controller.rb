@@ -32,7 +32,8 @@ class AlpacasController < ApplicationController
 
   def destroy
     @alpaca = Alpaca.find(params[:id])
-    @alpaca.destroy
+
+    @alpaca.destroy if @alpaca.user == current_user
     redirect_to alpacas_path
   end
 
