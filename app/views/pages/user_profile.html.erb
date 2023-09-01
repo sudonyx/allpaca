@@ -40,7 +40,7 @@
             </div>
             <p class="card-location"><%= alpaca.location %></p>
             <br>
-            <%= link_to "Delete Alpaca", alpaca_path(alpaca), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
+            <%= link_to "Delete Alpaca", alpaca_path(alpaca), id: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
           </div>
         </div>
       </div>

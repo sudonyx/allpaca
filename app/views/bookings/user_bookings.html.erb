@@ -30,7 +30,7 @@
               <p>Total Cost: $<span class="price"><%= (booking.end_date - booking.start_date).to_i * alpaca.price_per_night.to_i  %></span></p>
             </div>
             <br>
-            <%= link_to "Delete Booking", booking_path(booking), class: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
+            <%= link_to "Delete Booking", booking_path(booking), id: "delete-btn-user-page", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" } %>
           </div>
         </div>
       </div>
