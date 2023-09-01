@@ -39,3 +39,42 @@
     // margin-left: 70%;
     width: 375px;
 }
+
+#delete-btn {
+  background-color: $mid-gray;
+  display: block;
+  padding: 8px 24px;
+  color: white;
+  text-align: center;
+  text-decoration: capitalize;
+  border-radius: 6px;
+  opacity: 1;
+  transition: opacity 0.2 s ease;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 100;
+  
+}
+#delete-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+#delete-btn-user-page {
+  background-color: $mid-gray;
+  display: block;
+  padding: 8px 24px;
+  color: white;
+  text-align: center;
+  text-decoration: capitalize;
+  border-radius: 6px;
+  opacity: 1;
+  transition: opacity 0.2 s ease;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 100;
+}
+#delete-btn-user-page:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
