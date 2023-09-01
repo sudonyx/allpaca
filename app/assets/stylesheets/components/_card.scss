@@ -1,15 +1,17 @@
 .alpaca-card {
-  height: 450px;
+  // height: 450px;
+  height: auto;
+  width: 380px;
   background-color: $light-gray;
 
   a {
-    color: $gray;
-    font-weight: bold;
-
-    &:hover {
-      color: $green;
+      color: $gray;
+      font-weight: bold;
+  
+      &:hover {
+        color: $green;
+      }
     }
-  }
 
   img {
     height: 363px;
