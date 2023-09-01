@@ -16,7 +16,7 @@
 }
 
 .delete-btn {
-    background-color: rgb(214, 3, 3);
+    background-color: $mid-gray;
     display: block;
     padding: 8px 24px;
     color: white;
@@ -39,4 +39,3 @@
     // margin-left: 70%;
     width: 375px;
 }
-

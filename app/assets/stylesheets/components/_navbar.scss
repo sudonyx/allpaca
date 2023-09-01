@@ -4,6 +4,7 @@
   align-items: center;
   background: rgb(142, 182, 170);
   padding: 10px 10px;
+  margin: 0;
 }
 
 .navbar-custom .navbar-collapse {
@@ -22,7 +23,7 @@
 }
 
 .navbar-custom .navbar-nav .nav-link {
-  font-family: 'Lobster', cursive;
+  // font-family: 'Lobster', cursive;
   color: #cde4e7;
   font-size: 1.9em;
   transition: all 0.3s ease-in-out;
