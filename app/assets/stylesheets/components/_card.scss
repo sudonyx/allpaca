@@ -3,6 +3,7 @@
   height: auto;
   width: 380px;
   background-color: $light-gray;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;
 
   a {
       color: $gray;
@@ -33,11 +34,12 @@
   }
 }
 
-.booking-card {
-  height: auto;
-}
-
 .card-location {
   padding-top: 8px;
   font-size: 16px;
+}
+
+.alpaca-card-wide {
+  height: auto;
+  width: auto;
 }
