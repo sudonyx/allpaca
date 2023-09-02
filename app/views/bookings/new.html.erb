@@ -2,9 +2,9 @@
 
   <h1 class="text-center">Book this Alpaca!</h1>
   <div class= "form-inputs">
-    <%= simple_form_for([@alpaca, @booking]) do |form| %>
-      <%= form.input :start_date %>
-      <%= form.input :end_date %>
+    <%= simple_form_for([@alpaca, @booking], data: { controller: 'flatpickr' }) do |form| %>
+      <%= form.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+      <%= form.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } }  %>
       <div class = "btn-wrapper">
         <%= form.button :submit, "Book", class: "btn-green" %>
       </div>
