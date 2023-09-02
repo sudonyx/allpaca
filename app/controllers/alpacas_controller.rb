@@ -26,7 +26,7 @@ class AlpacasController < ApplicationController
     @review = Review.new
     @alpaca_booking = @alpaca.bookings.find_by(user: current_user)
     if @alpaca_booking
-    @booking = Booking.find(@alpaca_booking.id)
+      @booking = Booking.find(@alpaca_booking.id)
     end
   end
 

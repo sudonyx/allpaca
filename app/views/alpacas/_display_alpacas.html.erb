@@ -1,37 +1,58 @@
-<h2>Search by Hat</h2>
-  <div class="hat-icons">
+<div class="hat-icons">
+  <h2 class="text-center display-5">Search by hat:</h2>
+  <br>
+  <div class="text-center display-1">
     <%= link_to hat_search_alpacas_path(hat: "Wizard Hat") do %>
-    <i class="fa-solid fa-hat-wizard"></i>
+    <i class="fa-solid fa-hat-wizard">&nbsp</i>
     <% end %>
-    <i class="fa-solid fa-hat-cowboy"></i>
-    <i class="fa-brands fa-pied-piper-hat"></i>
-    <i class="fa-solid fa-helmet-safety"></i>
-    <i class="fa-solid fa-graduation-cap"></i>
-    <i class="fa-brands fa-redhat"></i>
-    <i class="fa-solid fa-crown"></i>
-  </div>
+    <%= link_to hat_search_alpacas_path(hat: "Cowboy") do %>
+        <i class="fa-solid fa-hat-cowboy">&nbsp</i>
+    <% end %>
+    <%= link_to hat_search_alpacas_path(hat: "Pied Piper Hat") do %>
+      <i class="fa-brands fa-pied-piper-hat">&nbsp</i>
+    <% end %>
+    <%= link_to hat_search_alpacas_path(hat: "Safety Helmet") do %>
+      <i class="fa-solid fa-helmet-safety">&nbsp</i>
+    <% end %>
+    <%= link_to hat_search_alpacas_path(hat: "Graduation Cap") do %>
+      <i class="fa-solid fa-graduation-cap">&nbsp</i>
+    <% end %>
+    <%= link_to hat_search_alpacas_path(hat: "Trilby") do %>
+      <i class="fa-brands fa-redhat">&nbsp</i>
+    <% end %>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @alpacas.each do |alpaca| %>
-      <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
-        <div class="card alpaca-card">
-          <% if alpaca.photo.key.nil? %>
-            <%= image_tag("main-logo.png", class: 'card-img-top') %>
-          <% else %>
-            <%= cl_image_tag(alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
-          <% end %>
-          <div class="card-body">
-            <div class="d-flex align-items-end justify-content-between ">
-              <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
-              <div class="d-flex">
-                <p class="card-text m-0 px-1">$</p>
-                <p class="price m-0"><%= alpaca.price_per_night.to_i %></p>
-              </div>
+    <%= link_to hat_search_alpacas_path(hat: "Crown") do %>
+      <i class="fa-solid fa-crown"></i>
+    <% end %>
+  </div>
+  <br>
+  <div>
+      <%= link_to alpacas_path, class: "text-center display-5" do %>
+        <h4>clear filter</h4>
+      <% end %>
+  </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @alpacas.each do |alpaca| %>
+    <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
+      <div class="card alpaca-card">
+        <% if alpaca.photo.key.nil? %>
+          <%= image_tag("main-logo.png", class: 'card-img-top') %>
+        <% else %>
+          <%= cl_image_tag(alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
+        <% end %>
+        <div class="card-body">
+          <div class="d-flex align-items-end justify-content-between ">
+            <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
+            <div class="d-flex">
+              <p class="card-text m-0 px-1">$</p>
+              <p class="price m-0"><%= alpaca.price_per_night.to_i %></p>
             </div>
-            <p class="card-location"><%= alpaca.location %></p>
           </div>
+          <p class="card-location"><%= alpaca.location %></p>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
