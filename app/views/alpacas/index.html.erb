@@ -1,27 +1,4 @@
 <div class="container">
   <h1 class="m-5 text-center">See all of our Alpacas</h1>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% @alpacas.each do |alpaca| %>
-      <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
-        <div class="card alpaca-card">
-          <% if alpaca.photo.key.nil? %>
-            <%= image_tag("main-logo.png", class: 'card-img-top') %>
-          <% else %>
-            <%= cl_image_tag(alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
-          <% end %>
-          <div class="card-body">
-            <div class="d-flex align-items-end justify-content-between ">
-              <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
-              <div class="d-flex">
-                <p class="card-text m-0 px-1">$</p>
-                <p class="price m-0"><%= alpaca.price_per_night.to_i %></p>
-              </div>
-            </div>
-            <p class="card-location"><%= alpaca.location %></p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render 'display_alpacas' %>

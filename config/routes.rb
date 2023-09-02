@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'user_profile', to: 'pages#user_profile'
 
   resources :alpacas, only: %i[index show new create destroy] do
+    collection do
+      get 'hat_search'
+    end
     resources :bookings, only: %i[new create]
     resources :reviews, only: :create
   end
