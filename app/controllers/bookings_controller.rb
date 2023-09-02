@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    
+
     @booking.update(accepted: params[:accepted])
   end
 
