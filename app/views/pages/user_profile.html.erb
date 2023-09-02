@@ -14,12 +14,12 @@
 
   <h2 class="display-4 px-4">Your booking requests:</h2>
 
-  <div>  
+  <div>
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <% @alpacas.each do |alpaca| %>
         <% alpaca.bookings.each do |booking| %>
           <% alpaca = booking.alpaca %>
-          <div class="col d-flex justify-content-center px-5 py-4">
+          <div class="col-12 col-md-12 col-xl-6 d-flex justify-content-center px-5 py-4">
             <div class="card alpaca-card alpaca-card-wide">
               <div class="row g-0">
                 <div class="col-md-5">
@@ -54,14 +54,14 @@
                     </div>
                   </div>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
-    
+
   <br>
   <br>
   <br>
@@ -72,12 +72,12 @@
       <h2 class="px-4">You don't have any alpacas 😭</h2>
     <% else %>
       <h2 class="px-4">You have <%= @alpacas.count %> alpaca<%= @alpacas.count == 1 ? '' : 's' %>!</h2>
-    <% end %>   
+    <% end %>
   </div>
-  
+
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @alpacas.each do |alpaca| %>
-      <div class="col px-5 py-4">
+      <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
         <div class="card alpaca-card">
           <% if alpaca.photo.key.nil? %>
             <%= image_tag("main-logo.png", class: 'card-img-top') %>

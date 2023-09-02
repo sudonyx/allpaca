@@ -3,7 +3,7 @@
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% @alpacas.each do |alpaca| %>
-      <div class="col px-5 py-4">
+      <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
         <div class="card alpaca-card">
           <% if alpaca.photo.key.nil? %>
             <%= image_tag("main-logo.png", class: 'card-img-top') %>
