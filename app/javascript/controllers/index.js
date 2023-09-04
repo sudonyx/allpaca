@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AcceptButtonController from "./accept_button_controller"
+application.register("accept-button", AcceptButtonController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
