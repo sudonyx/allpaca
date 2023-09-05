@@ -18,7 +18,6 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
       <% @alpacas.each do |alpaca| %>
         <% alpaca.bookings.each do |booking| %>
-          <% alpaca = booking.alpaca %>
           <div class="col-12 col-md-12 col-xl-6 d-flex justify-content-center px-5 py-4">
             <div class="card alpaca-card alpaca-card-wide">
               <div class="row g-0">
@@ -48,9 +47,9 @@
                         <br>
                         <p>You will earn: $<span class="price"><%= (booking.end_date - booking.start_date).to_i * alpaca.price_per_night.to_i  %></span></p>
                       </div>
-                      <div class="pt-3">
-                        <%= button_to "Accept Booking", booking_path(booking, accepted: true), id: 'btn-accept', class: "btn-booking delete-btn mb-3", method: :patch, data: { confirm: "Are you sure you want to accept this booking?", controller: "accept-button", action: "click->accept-button#disable", accepted: :true, turbo_method: :patch, turbo_confirm: "Are you sure you want to accept this booking?" } %>
-                        <%= button_to "Reject Booking", booking_path(booking, origin: 'user_profile'), id: 'btn-reject', class: "btn-booking delete-btn", method: :delete, data: { confirm: "Are you sure you want to reject this booking?", turbo_method: :delete, turbo_confirm: "Are you sure you want to reject this booking?" } %>
+                      <div class="pt-3" data-controller="accept-button">
+                        <%= button_to "Accept Booking", booking_path(booking, accepted: true), method: :patch, id: 'btn-accept', class: "btn-booking delete-btn mb-3", data: { accept_button_target: "button", accepted: booking.accepted, turbo_method: :patch, turbo_confirm: "Are you sure you want to accept this booking?" } %>
+                        <%= button_to "Reject Booking", booking_path(booking, origin: 'user_profile'), id: 'btn-reject', class: "btn-booking delete-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to reject this booking?" } %>
                       </div>
                     </div>
                   </div>
