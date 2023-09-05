@@ -1,1 +1,73 @@
 // Specific CSS for your home-page
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(252, 252, 252);
+  color: #333;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.display-2 {
+  margin-top: 2%;
+  padding: 2% 0;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.display-2 h2 {
+  color: #25b8a6;
+  transition: color 0.3s;
+}
+
+.display-2 h2:hover {
+  color: #666;
+}
+
+.display-2 p {
+  color: #25b8a6;
+}
+
+.display-2 h2:hover {
+  color: #666;
+}
+
+.card-group {
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+  color: #4a90e2;
+}
+
+.card p {
+  color: #666;
+}
+
+i.fa-solid {
+  color: #4a90e2; 
+  transition: color 0.3s;
+}
+
+i.fa-solid:hover {
+  color: #357ab7;
+}
