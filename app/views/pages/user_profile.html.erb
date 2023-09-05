@@ -1,10 +1,104 @@
-
 <div class="container my-4">
-  <h1 class="mb-4">Your User Profile</h1>
-  <div class="user-info">
-    <h2><%= @user.username %></h2>
-    <p>Email: <%= @user.email %></p>
+  <div class="px-4 pt-5 pb-3">
+    <div class="d-flex">
+      <h1 class="mb-4">Hello <%= @user.username %></h1>
+      <i class="fa-solid fa-user display-1 px-4"></i>
+      <div>
+        <%= link_to 'Edit your profile', edit_user_registration_path, class: 'btn btn-green mx-5 text-center' %>
+      </div>
+    </div>
+    <br>
+  </div>
+
+  <br>
+
+  <h2 class="display-4 px-4">Your booking requests:</h2>
+
+  <div>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <% @alpacas.each do |alpaca| %>
+        <% alpaca.bookings.each do |booking| %>
+          <% alpaca = booking.alpaca %>
+          <div class="col-12 col-md-12 col-xl-6 d-flex justify-content-center px-5 py-4">
+            <div class="card alpaca-card alpaca-card-wide">
+              <div class="row g-0">
+                <div class="col-md-5">
+                  <% if alpaca.photo.key.nil? %>
+                    <%= image_tag("main-logo.png", class: 'card-img-top') %>
+                  <% else %>
+                    <%= cl_image_tag(alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
+                  <% end %>
+                </div>
+                <div class="col-md-7">
+                  <div>
+                    <div class="card-body">
+                      <div class="d-flex align-items-end justify-content-between ">
+                        <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
+                        <div class="d-flex">
+                          <p class="card-text m-0 px-1">$</p>
+                          <p class="price m-0"><%= alpaca.price_per_night.to_i %></p>
+                        </div>
+                      </div>
+                      <p class="card-location"><%= alpaca.location %></p>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-text text-end">
+                        <p>Start Date: <span class="price"><%= booking.start_date %></span></p>
+                        <p>End Date: <span class="price"><%= booking.end_date %></span></p>
+                        <br>
+                        <p>You will earn: $<span class="price"><%= (booking.end_date - booking.start_date).to_i * alpaca.price_per_night.to_i  %></span></p>
+                      </div>
+                      <div class="pt-3">
+                        <%= button_to "Accept Booking", booking_path(booking, accepted: true), id: 'btn-accept', class: "btn-booking delete-btn mb-3", method: :patch, data: { confirm: "Are you sure you want to accept this booking?", controller: "accept-button", action: "click->accept-button#disable", accepted: :true, turbo_method: :patch, turbo_confirm: "Are you sure you want to accept this booking?" } %>
+                        <%= button_to "Reject Booking", booking_path(booking, origin: 'user_profile'), id: 'btn-reject', class: "btn-booking delete-btn", method: :delete, data: { confirm: "Are you sure you want to reject this booking?", turbo_method: :delete, turbo_confirm: "Are you sure you want to reject this booking?" } %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="d-flex align-items-end mt-5 mb-4">
+    <span class="display-4 px-4">Your alpacas:</span>
+    <% if @alpacas.empty? %>
+      <h2 class="px-4">You don't have any alpacas 😭</h2>
+    <% else %>
+      <h2 class="px-4">You have <%= @alpacas.count %> alpaca<%= @alpacas.count == 1 ? '' : 's' %>!</h2>
+    <% end %>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @alpacas.each do |alpaca| %>
+      <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
+        <div class="card alpaca-card">
+          <% if alpaca.photo.key.nil? %>
+            <%= image_tag("main-logo.png", class: 'card-img-top') %>
+          <% else %>
+            <%= cl_image_tag(alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
+          <% end %>
+          <div class="card-body">
+            <div class="d-flex align-items-end justify-content-between ">
+              <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
+              <div class="d-flex">
+                <p class="card-text m-0 px-1">$</p>
+                <p class="price m-0"><%= alpaca.price_per_night.to_i %></p>
+              </div>
+            </div>
+            <p class="card-location"><%= alpaca.location %></p>
+            <br>
+            <%= link_to "Delete Alpaca", alpaca_path(alpaca), id: "delete-btn", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this Alpaca?" } %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-<%= render 'shared/footer' %>

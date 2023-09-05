@@ -9,6 +9,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def update
+    @booking = Booking.find(params[:id])
+
+    @booking.update(accepted: params[:accepted])
+  end
+
   def create
     @alpaca = Alpaca.find(params[:alpaca_id])
     @booking = Booking.new(booking_params)
@@ -25,6 +31,17 @@ class BookingsController < ApplicationController
   def user_bookings
     @user = current_user
     @bookings = Booking.where(user: @user)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+
+    if params[:origin] == 'user_profile'
+      redirect_to user_profile_path
+    else
+      redirect_to user_bookings_bookings_path
+    end
   end
 
   private

@@ -1,17 +1,16 @@
-<div class="container my-4">
+<div class="form-container">
   <h1 class="mb-4">Create a New Alpaca</h1>
-
-  <%= simple_form_for @alpaca, url: alpacas_path, html: { class: "form" } do |form| %>
-    <%= form.input :name, label: "Name", input_html: { class: "form-control" } %>
-    <%= form.input :colour, label: "Colour", input_html: { class: "form-control" } %>
-    <%= form.input :location, label: "Location", input_html: { class: "form-control" } %>
-    <%= form.input :hat, label: "Hat", input_html: { class: "form-control" } %>
-    <%= form.input :price_per_night, label: "Price per Night", input_html: { class: "form-control" } %>
-    <%= form.input :photo, label: "Photo", as: :file, input_html: { class: "form-control" } %>
-    <div class="btn-wrapper">
-      <%= form.button :submit, "Create Your Alpaca", class: "btn-green" %>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <%= simple_form_for @alpaca, url: alpacas_path, html: { class: "form" } do |form| %>
+      <%= form.input :name, label: "Name", input_html: { class: "form-control" } %>
+      <%= form.input :colour, label: "Colour", input_html: { class: "form-control" } %>
+      <%= form.input :location, label: "Location", input_html: { class: "form-control" } %>
+      <%= form.input :hat, collection: ['Trilby', 'Cowboy', 'Wizard Hat', 'Safety Helmet', 'Graduation Cap', 'Pied Piper Hat', 'Crown'], label: "Hat", input_html: { class: "form-control" } %>
+      <%= form.input :price_per_night, label: "Price per Night", input_html: { class: "form-control" } %>
+      <%= form.input :photo, label: "Photo", as: :file, input_html: { class: "form-control" } %>
+      <div class="btn-wrapper">
+        <%= form.button :submit, "Create Your Alpaca", class: "btn-green" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<%= render 'shared/footer' %>

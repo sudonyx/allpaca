@@ -4,21 +4,14 @@
 
 import { application } from "./application"
 
+import AcceptButtonController from "./accept_button_controller"
+application.register("accept-button", AcceptButtonController)
+
+import FlatpickrController from "./flatpickr_controller"
+application.register("flatpickr", FlatpickrController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
-
-document.addEventListener("DOMContentLoaded", function() {
-    var reviewBtn = document.getElementById("review-btn");
-    var reviewForm = document.getElementById("review-form");
-
-    reviewBtn.addEventListener("click", function() {
-      if (reviewForm.style.display === "none") {
-        reviewForm.style.display = "block";
-      } else {
-        reviewForm.style.display = "none";
-      }
-    });
-  });

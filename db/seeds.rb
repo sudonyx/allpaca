@@ -11,10 +11,10 @@ User.destroy_all
 
 user = User.create!({ email: 'test@test.com', password: 'password' })
 
-10.times do
+30.times do
   name = Faker::Artist.name
   colour = Faker::Color.color_name.capitalize
-  hat = ['Top hat', 'Trilby', 'Fedora', 'Bonnet', 'Baseball cap', 'Flat cap', 'Beanie', 'Bucket hat', 'Cowboy'].sample
+  hat = ['Trilby', 'Cowboy', 'Wizard Hat', 'Safety Helmet', 'Graduation Cap', 'Pied Piper Hat', 'Crown'].sample
   location = Faker::Address.city
   price_per_night = (20..100).to_a.sample
 
