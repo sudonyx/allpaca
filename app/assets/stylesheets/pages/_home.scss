@@ -1,1 +1,121 @@
 // Specific CSS for your home-page
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(252, 252, 252);
+  color: #333;
+}
+
+h1.animated {
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #04634c 0%,
+    #27dca6 29%,
+    #1342ff 67%,
+    #00e5ff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 5s linear infinite;
+  display: inline-block;
+      font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.display-2 {
+  margin-top: 2%;
+  padding: 2% 0;
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.display-2 h2 {
+  color: #25b8a6;
+  transition: color 0.3s;
+}
+
+.display-2 p {
+  color: #25b8a6;
+}
+
+.card-group {
+  margin-top: 4%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h4 {
+  color: #4a90e2;
+}
+
+.card p {
+  color: #666;
+}
+
+i.fa-solid {
+  color: #4a90e2;
+  transition: color 0.3s;
+}
+
+i.fa-solid:hover {
+  color: #357ab7;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 5%;
+  margin-top: 2%;
+}
+
+.image-container img {
+  width: 15%;
+  max-width: 100%;
+  transition: transform 0.3s;
+  border: 3px solid #666;
+  border-radius: 10px;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+}
+
+.square-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  display: inline-block;
+}
