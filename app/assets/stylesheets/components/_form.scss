@@ -1,12 +1,8 @@
-.form-inputs {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-actions {
-    display: block;
-    width: 50vh;
+.new-alpaca-page {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('alpacas-bg.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .form-container {
@@ -14,11 +10,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   background-color: rgb(142, 182, 170);
   border: 3px solid #666;
   border-radius: 10px;
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   margin-top: 7%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -30,31 +26,21 @@
   transform: scale(1.02);
 }
 
-
-.form-and-img-wrapper {
-  display: flex;
-  justify-content: space-between;
+.form-section {
   width: 100%;
-}
-
-.form-section, .img-section {
-  flex: 1;
-  padding: 40px;
+  padding: 20px;
 }
 
 .form-inputs {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .form-actions {
   display: block;
-  width: 50vh;
-}
-
-.img-display img {
-  max-width: 100%;
-  height: auto;
+  width: 80vh;
 }
 
 .page-container {
@@ -66,9 +52,3 @@
   margin: 0 auto;
   margin-top: 7%;
 }
-
-.form-container {
-  width: 40%;
-  padding: 0 20px;
-}
-
