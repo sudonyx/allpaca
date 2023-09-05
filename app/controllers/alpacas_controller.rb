@@ -3,8 +3,6 @@ class AlpacasController < ApplicationController
 
   def index
     @alpacas = Alpaca.all
-
-    flash[:notice] = 'Hello'
   end
 
   def new
