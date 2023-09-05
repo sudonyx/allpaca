@@ -34,8 +34,7 @@
                       <div class="d-flex align-items-end justify-content-between ">
                         <h2 class="card-title m-0"><%= link_to alpaca.name, alpaca_path(alpaca) %></h2>
                         <div class="d-flex">
-                          <p class="card-text m-0 px-1">$</p>
-                          <p class="price m-0"><%= alpaca.price_per_night.to_i %></p>
+                          <p class="price m-0">$ <%= alpaca.price_per_night.to_i %></p>
                         </div>
                       </div>
                       <p class="card-location"><%= alpaca.location %></p>
