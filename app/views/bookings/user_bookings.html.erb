@@ -11,7 +11,24 @@
             <div class="row g-0">
               <div class="col-md-5">
                 <% if alpaca.photo.key.nil? %>
-                  <%= image_tag("main-logo.png", class: 'card-img-top') %>
+                  <% case alpaca.hat %>
+                  <% when 'Wizard Hat' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-wizard-hat.jpg", class: 'card-img-top') %>
+                  <% when 'Cowboy' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-cowboy-hat.jpg", class: 'card-img-top') %>
+                  <% when 'Pied Piper Hat' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-pied-piper-hat.jpg", class: 'card-img-top') %>
+                  <% when 'Safety Helmet' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-hard-hat.jpg", class: 'card-img-top') %>
+                  <% when 'Graduation Cap' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-graduation-cap.jpg", class: 'card-img-top') %>
+                  <% when 'Trilby' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-trilby.jpg", class: 'card-img-top') %>
+                  <% when 'Crown' %>
+                    <%= image_tag("alpacas-with-hats/alpaca-crown.jpg", class: 'card-img-top') %>
+                  <% else %>
+                    <%= image_tag("main-logo.png", class: 'card-img-top') %>
+                  <% end %>
                 <% else %>
                   <%= cl_image_tag(alpaca.photo.key, class: 'card-img-top', width: 400, height: 300, crop: :fit) %>
                 <% end %>
