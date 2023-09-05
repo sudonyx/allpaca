@@ -13,5 +13,11 @@ application.register("flatpickr", FlatpickrController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import NewImgController from "./new_img_controller"
+application.register("new-img", NewImgController)
+
+import ReviewButtonController from "./review_button_controller"
+application.register("review-button", ReviewButtonController)
+
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)

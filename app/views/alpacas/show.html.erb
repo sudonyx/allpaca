@@ -29,57 +29,40 @@
 
   </div>
 
-  <div>
-
-  <div class="review-box">
-    <p class="title"><strong>Reviews</strong></p>
-    <div class="list-items">
-      <% if @reviews.any? %>
-        <% @reviews.each do |review| %>
-          <li class="review-item">
-            <strong><%= review.title.capitalize %></strong><br>
-            <%= review.content.capitalize %>
-          </li>
-        <% end %>
-      <% else %>
-        <p>Book this Alpaca to be the first to review it!</p>
-      <% end %>
-    </div>
-    <% if @alpaca_booking.present? %>
-      <button id="review-btn">Review Alpaca</button>
-    <% else %>
-      <%= link_to "Book Alpaca", new_alpaca_booking_path(@alpaca), id: "booking-btn" %>
-    <% end %>
-  </div>
-
-  <% if @alpaca_booking %>
-    <div id="form-hide">
-      <div class="review-box" id="review-form">
-        <h1>New review</h1>
-        <%= simple_form_for [@booking, @review] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :content %>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <div data-controller="review-button">
+    <div class="review-box">
+      <p class="title"><strong>Reviews</strong></p>
+      <div class="list-items">
+        <% if @reviews.any? %>
+          <% @reviews.each do |review| %>
+            <li class="review-item">
+              <strong><%= review.title.capitalize %></strong><br>
+              <%= review.content.capitalize %>
+            </li>
+          <% end %>
+        <% else %>
+          <p>Book this Alpaca to be the first to review it!</p>
         <% end %>
       </div>
+      <% if @alpaca_booking.present? %>
+        <button id="review-btn" data-action="click->review-button#toggle">Review Alpaca</button>
+      <% else %>
+        <%= link_to "Book Alpaca", new_alpaca_booking_path(@alpaca), id: "booking-btn" %>
+      <% end %>
     </div>
-  <% end %>
-  
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      var reviewBtn = document.getElementById("review-btn");
-      var reviewForm = document.getElementById("review-form");
-
-      reviewBtn.addEventListener("click", function() {
-        if (reviewForm.style.display === "none") {
-          reviewForm.style.display = "block";
-        } else {
-          reviewForm.style.display = "none";
-        }
-      });
-    });      
-  </script>
+    <% if @alpaca_booking %>
+      <div class="form-hide" data-review-button-target="form">
+        <div class="review-box" id="review-form">
+          <h5 class="text-center">New review</h5>
+          <%= simple_form_for [@booking, @review] do |f| %>
+            <%= f.input :title %>
+            <%= f.input :content %>
+            <%= f.submit "Submit review", id: "review-btn" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
 
   </div>
 
