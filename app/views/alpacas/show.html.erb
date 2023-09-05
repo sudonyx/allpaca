@@ -25,7 +25,7 @@
 
   <div data-controller="review-button">
     <div class="review-box">
-      <p class="title"><strong>Reviews</strong></p>
+      <h2 class="title"><strong>Reviews</strong></h2>
       <div class="list-items">
         <% if @reviews.any? %>
           <% @reviews.each do |review| %>
@@ -48,7 +48,7 @@
     <% if @alpaca_booking %>
       <div class="form-hide" data-review-button-target="form">
         <div class="review-box" id="review-form">
-          <h5 class="text-center">New review</h5>
+          <h2 class="text-center">New review</h2>
           <%= simple_form_for [@booking, @review] do |f| %>
             <%= f.input :title %>
             <%= f.input :content %>
