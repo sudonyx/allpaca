@@ -4,7 +4,6 @@ class Alpaca < ApplicationRecord
   has_many :reviews, through: :bookings, dependent: :destroy
 
   has_one_attached :photo
-  validates :photo, presence: true
 
   validates :name, presence: true
   validates :colour, presence: true
