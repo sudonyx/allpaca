@@ -18,6 +18,9 @@ class ReviewsController < ApplicationController
       end
     end
    
+    def destroy
+      @review = Review.destroy
+    end
 
     private 
 
