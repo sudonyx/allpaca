@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 
 body {
-  font-family: 'Arial', sans-serif;
   background-color: rgb(252, 252, 252);
   color: #333;
 }
@@ -25,7 +24,7 @@ h1.animated {
   -webkit-text-fill-color: transparent;
   animation: textclip 5s linear infinite;
   display: inline-block;
-      font-size: 190px;
+      font-size: 150px;
 }
 
 @keyframes textclip {
@@ -60,6 +59,15 @@ h1.animated {
   margin-top: 4%;
   display: flex;
   justify-content: space-between;
+
+  i.fa-solid {
+    color: #4a90e2;
+    transition: color 0.3s;
+  }
+
+  i.fa-solid:hover {
+    color: #357ab7;
+  }
 }
 
 .card {
@@ -84,14 +92,6 @@ h1.animated {
   color: #666;
 }
 
-i.fa-solid {
-  color: #4a90e2;
-  transition: color 0.3s;
-}
-
-i.fa-solid:hover {
-  color: #357ab7;
-}
 
 .image-container {
   display: flex;
