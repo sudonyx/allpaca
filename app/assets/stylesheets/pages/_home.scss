@@ -5,26 +5,9 @@ body {
   color: #333;
 }
 
-h1.animated {
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #04634c 0%,
-    #27dca6 29%,
-    #1342ff 67%,
-    #00e5ff 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 5s linear infinite;
-  display: inline-block;
-      font-size: 150px;
+#animated {
+  color: white;
+  font-size: 110px;
 }
 
 @keyframes textclip {
