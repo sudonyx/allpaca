@@ -1,7 +1,10 @@
 .alpaca-details {
   img {
     height: 500px;
-    width: auto;
+    width: 500px;
+    object-fit: cover;
+    border: 3px solid #666;
+    border-radius: 10px;
   }
 
   .alpaca-details-text {
