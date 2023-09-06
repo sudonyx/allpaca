@@ -34,7 +34,12 @@
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @alpacas.each do |alpaca| %>
+  <% if @alpacas.empty? %>
+    <div class="col-12 m-auto mt-5">
+      <h3 class="text-center mt-5">No alpacas with this type of hat</h3>
+    </div>
+  <% else %>
+    <% @alpacas.each do |alpaca| %>
     <div class="col-12 col-md-6 col-xl-4 px-5 py-4">
       <div class="card alpaca-card">
         <% if alpaca.photo.key.nil? %>
@@ -70,5 +75,6 @@
         </div>
       </div>
     </div>
+  <% end %>
   <% end %>
 </div>

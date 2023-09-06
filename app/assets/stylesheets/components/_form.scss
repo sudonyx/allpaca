@@ -10,13 +10,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 30px;
+  padding: 10px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   background-color: rgb(142, 182, 170);
   border: 3px solid #666;
   border-radius: 10px;
   max-width: 700px;
   margin: 0 auto;
-  margin-top: 7%;
+  margin-top: 6%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
@@ -32,15 +34,18 @@
 }
 
 .form-inputs {
-  width: 45vh;
+  width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
 .form-actions {
-  display: block;
-  width: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 .page-container {

@@ -3,7 +3,9 @@
     <h1 id="animated">Allpaca</h1>
     <p><span data-controller="typed-js"></span></p>
   <div>
-    <a class="btn btn-green" href=<%= new_user_registration_path %>>Register Now</a>
+    <% unless user_signed_in? %>
+      <a class="btn btn-green" href=<%= new_user_registration_path %>>Register Now</a>
+    <% end %>
   </div>
   </div>
 </div>
@@ -15,11 +17,11 @@
 <div>
 
 <div class="image-container">
-    <%= image_tag 'alpaca-hat1.jpg', alt: "Description of image 1", class: "square-image" %>
-    <%= image_tag 'alpaca-hat2.jpg', alt: "Description of image 2", class: "square-image" %>
-    <%= image_tag 'alpaca-hat3.jpg', alt: "Description of image 3", class: "square-image" %>
-    <%= image_tag 'alpaca-hat4.jpg', alt: "Description of image 4", class: "square-image" %>
-    <%= image_tag 'alpaca-hat5.jpg', alt: "Description of image 5", class: "square-image" %>
+    <%= image_tag 'alpaca-hat4.jpg', alt: "Description of image 1", class: "square-image" %>
+    <%= image_tag 'alpaca-home1.jpg', alt: "Description of image 2", class: "square-image" %>
+    <%= image_tag 'alpaca-hat6.jpg', alt: "Description of image 3", class: "square-image" %>
+    <%= image_tag 'alpaca-hat7.png', alt: "Description of image 4", class: "square-image" %>
+    <%= image_tag 'alpaca-home2.jpg', alt: "Description of image 5", class: "square-image" %>
 </div>
     <h2 class="h1 py-5 pb-3">Here's how Allpaca works</h2>
     <p class="display-5">Search and rent your favorite alpaca. It's easy as 1, 2, 3.</p>
@@ -33,7 +35,7 @@
 <br>
 
 <div class="card-group display-6">
-  <div class="card text-center">
+  <div class="card home-card text-center">
     <div class="card-body">
       <h4 class="card-title display-3">1. Find an alpaca</h4>
       <br>
@@ -42,7 +44,7 @@
       <p class="card-text">Search and find your favorite alpaca nearby.</p>
     </div>
   </div>
-  <div class="card text-center">
+  <div class="card home-card text-center">
     <div class="card-body">
       <h4 class="card-title display-3">2. Book the alpaca </h4>
       <br>
@@ -51,7 +53,7 @@
       <p class="card-text">Book the alpaca through our safe online system.</p>
     </div>
   </div>
-  <div class="card text-center">
+  <div class="card home-card text-center">
     <div class="card-body">
       <h4 class="card-title display-3">3. Meet the alpaca!</h4>
       <br>

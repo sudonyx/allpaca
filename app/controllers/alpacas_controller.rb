@@ -34,7 +34,7 @@ class AlpacasController < ApplicationController
     @alpaca = Alpaca.find(params[:id])
 
     @alpaca.destroy if @alpaca.user == current_user
-    redirect_to alpacas_path
+    redirect_to user_profile_path
   end
 
   def hat_search
