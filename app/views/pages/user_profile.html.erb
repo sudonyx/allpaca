@@ -64,8 +64,8 @@
                         <p>You will earn: $<span class="price"><%= (booking.end_date - booking.start_date).to_i * alpaca.price_per_night.to_i  %></span></p>
                       </div>
                       <div class="pt-3" data-controller="accept-button">
-                        <%= button_to "Accept Booking", booking_path(booking, accepted: true), method: :patch, id: 'btn-accept', class: "btn-booking delete-btn mb-3", data: { accept_button_target: "button", accepted: booking.accepted, turbo_method: :patch, turbo_confirm: "Are you sure you want to accept this booking?" } %>
-                        <%= button_to "Reject Booking", booking_path(booking, origin: 'user_profile'), id: 'btn-reject', class: "btn-booking delete-btn", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to reject this booking?" } %>
+                        <%= button_to "Accept Booking", booking_path(booking, accepted: true), method: :patch, class: "btn-booking delete-btn mb-3 btn-accept", data: { accept_button_target: "button", accepted: booking.accepted, turbo_method: :patch, turbo_confirm: "Are you sure you want to accept this booking?" } %>
+                        <%= button_to "Reject Booking", booking_path(booking, origin: 'user_profile'), class: "btn-booking delete-btn btn-reject", method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to reject this booking?" } %>
                       </div>
                     </div>
                   </div>
