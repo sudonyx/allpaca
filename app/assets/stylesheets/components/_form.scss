@@ -57,3 +57,18 @@
   margin: 0 auto;
   margin-top: 7%;
 }
+
+#flatpickr-form-container {
+  max-width: 900px;
+}
+
+#flatpickr-form-inputs {
+  
+  .flatpickr-date-pick {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+}
