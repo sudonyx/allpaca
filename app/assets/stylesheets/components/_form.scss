@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 30px;
   background-color: rgb(142, 182, 170);
   border: 3px solid #666;
   border-radius: 10px;
@@ -28,11 +28,11 @@
 
 .form-section {
   width: 100%;
-  padding: 20px;
+  padding: 30px;
 }
 
 .form-inputs {
-  width: 100%;
+  width: 45vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 
 .form-actions {
   display: block;
-  width: 80vh;
+  width: 60vh;
 }
 
 .page-container {
