@@ -1,10 +1,12 @@
-<div class="form-container">
+<div class="form-container" id="flatpickr-form-container">
 
   <h1 class="text-center">Book this Alpaca!</h1>
-  <div class= "form-inputs">
+  <div class= "form-inputs" id="flatpickr-form-inputs">
     <%= simple_form_for([@alpaca, @booking], data: { controller: 'flatpickr' }) do |form| %>
-      <%= form.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
-      <%= form.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" } }  %>
+      <div class="flatpickr-date-pick">
+        <%= form.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime", inline: true } } %>
+        <%= form.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime", inline: true } }  %>
+      </div>
       <div class = "btn-wrapper">
         <%= form.button :submit, "Book", class: "btn-green" %>
       </div>
